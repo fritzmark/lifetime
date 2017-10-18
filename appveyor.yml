@@ -4,3 +4,7 @@ install:
 build_script:
   - qmake lifetime3.pro
   - mingw32-make
+  - 7z a lifetime.zip C:/projects/lifetime/bin/lifetime.exe
+artifacts:
+  - path: lifetime.zip
+    name: Lifetime
