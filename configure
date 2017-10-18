@@ -1,0 +1,7 @@
+#!/bin/sh
+ERROR_OCCURES=0
+echo "Creating makefiles..."
+qmake -recursive || ((ERROR_OCCURES++))
+
+[ $ERROR_OCCURES -eq 0 ] && echo "All ok. Run make now!"
+

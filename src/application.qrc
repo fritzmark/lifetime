@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>img/add.png</file>
+        <file>img/configure.png</file>
+        <file>img/configure_22.png</file>
+        <file>img/exit.png</file>
+        <file>img/fileopen.png</file>
+        <file>img/filesaveas.png</file>
+        <file>img/geht.xpm</file>
+        <file>img/help.png</file>
+        <file>img/history.png</file>
+        <file>img/kommt.xpm</file>
+        <file>img/lifeline_blue_48x48.png</file>
+        <file>img/ok.png</file>
+        <file>img/player_pause.png</file>
+        <file>img/plugin.png</file>
+        <file>img/reload.png</file>
+        <file>img/remove.png</file>
+        <file>img/run.png</file>
+        <file>img/sum.png</file>
+        <file>img/theme.png</file>
+        <file>img/view_text.png</file>
+        <file>img/view_text_22.png</file>
+        <file>img/working.png</file>
+        <file>img/working_idle.png</file>
+        <file>img/working_overtime.png</file>
+        <file>img/working_pause.png</file>
+    </qresource>
+</RCC>
