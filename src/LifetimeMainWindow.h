@@ -39,7 +39,7 @@
 #define WORKING_OVERTIME 2
 #define WORKING_PAUSE 3
 
-#define VERSION "2.1.2"
+#define VERSION "3.0.0"
 
 
 class QAction;
