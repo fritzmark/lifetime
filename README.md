@@ -21,3 +21,4 @@ Feel free to create issues or pull requests for lifetime.
 # Current status:
 
 [![Build status](https://ci.appveyor.com/api/projects/status/lhbe77l3ra5mk3y8?svg=true)](https://ci.appveyor.com/project/AngelM1981/lifetime)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0130c060629e4239a3effc7a6994dc35)](https://www.codacy.com/app/fritzmark/lifetime?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=fritzmark/lifetime&amp;utm_campaign=Badge_Grade)
