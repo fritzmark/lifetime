@@ -29,6 +29,7 @@ LifetimeCore::LifetimeCore(LifetimeMainWindow *parent)
     this->startTime = (QDateTime*)0;
     this->plannedEndTime = (QDateTime*)0;
     this->inPause = false;
+    this->restDuration = 0;
 }
 
 
