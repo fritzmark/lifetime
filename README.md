@@ -14,7 +14,7 @@ Changed stuff from lifetime 2:
 
 - Translations removed
 - Removed plugin interface (Since it did not compile anymore under new QT)
-- Moved to QT 5.9
+- Moved to QT 5.10.1
 
 Feel free to create issues or pull requests for lifetime.
 
