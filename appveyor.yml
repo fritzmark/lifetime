@@ -10,6 +10,7 @@ build_script:
   - 7z a lifetime.zip %QTDIR%\bin\Qt5Core.dll 
   - 7z a lifetime.zip %QTDIR%\bin\Qt5Gui.dll 
   - 7z a lifetime.zip %QTDIR%\bin\Qt5Widgets.dll 
+  - 7z a lifetime.zip %QTDIR%\bin\libwinpthread-1.dll
 artifacts:
   - path: lifetime.zip
     name: Lifetime
