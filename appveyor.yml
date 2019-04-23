@@ -4,14 +4,8 @@ install:
 build_script:
   - qmake lifetime3.pro
   - mingw32-make
-  - 7z a lifetime.zip C:/projects/lifetime/bin/lifetime.exe
-  - 7z a lifetime.zip %QTDIR%\bin\libgcc_s_dw2-1.dll
-  - 7z a lifetime.zip %QTDIR%\bin\libstdc++-6.dll
-  - 7z a lifetime.zip %QTDIR%\bin\Qt5Core.dll 
-  - 7z a lifetime.zip %QTDIR%\bin\Qt5Gui.dll 
-  - 7z a lifetime.zip %QTDIR%\bin\Qt5Widgets.dll 
-  - 7z a lifetime.zip %QTDIR%\bin\libwinpthread-1.dll
-  - 7z a lifetime.zip %QTDIR%\bin\qwindows.dll
+  - windeployqt C:/projects/lifetime/bin/lifetime.exe
+  - 7z a lifetime.zip -r C:/projects/lifetime/bin/
 artifacts:
   - path: lifetime.zip
     name: Lifetime
