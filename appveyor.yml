@@ -5,6 +5,7 @@ build_script:
   - qmake lifetime3.pro
   - mingw32-make
   - windeployqt C:/projects/lifetime/bin/lifetime.exe
+  - cp %QTDIR%\bin\libwinpthread-1.dll C:/projects/lifetime/bin/
   - 7z a lifetime.zip -r C:/projects/lifetime/bin/
 artifacts:
   - path: lifetime.zip
