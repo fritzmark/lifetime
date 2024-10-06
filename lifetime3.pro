@@ -2,4 +2,5 @@ SUBDIRS += src
 TEMPLATE = subdirs 
 CONFIG += warn_on \
           qt \
-          thread
+          thread \
+          resources_big

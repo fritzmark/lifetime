@@ -87,7 +87,7 @@ bool LifetimeConfig::readConfig()
 
     QPoint pos = settings.value("pos", QPoint(200, 200)).toPoint();
     QSize size = settings.value("size", QSize(400, 400)).toSize();
-    QDateTime touch = QDateTime::fromTime_t(settings.value("touch", "0").toUInt());
+    QDateTime touch = QDateTime::fromSecsSinceEpoch(settings.value("touch", "0").toUInt());
 
     this->workPerDay[0] = settings.value("workMonday", "07:30:00").toString();
     this->workPerDay[1] = settings.value("workTuesday", "07:30:00").toString();
@@ -107,7 +107,7 @@ bool LifetimeConfig::readConfig()
 
     this->usePause = settings.value("usePause", false).toBool();
 
-    this->startTime = QDateTime::fromTime_t(settings.value("startTime", this->startTime.toTime_t()).toUInt());
+    this->startTime = QDateTime::fromSecsSinceEpoch(settings.value("startTime", this->startTime.toSecsSinceEpoch()).toUInt());
     this->jobDescription = settings.value("jobDescription", this->jobDescription).toString();
 
     this->useTheme = settings.value("useTheme", false).toBool();
@@ -119,7 +119,7 @@ bool LifetimeConfig::readConfig()
     this->stateFromConfig = settings.value("state", "0").toInt();
     this->pauseFromConfig = settings.value("pauseSum", "0").toUInt();
     this->inPause = settings.value("inPause", false).toBool();
-    this->pauseSince = QDateTime::fromTime_t(settings.value("pauseSince", "0").toUInt());
+    this->pauseSince = QDateTime::fromSecsSinceEpoch(settings.value("pauseSince", "0").toUInt());
 
     this->useAutostart = settings.value("useAutostart", false).toBool();
     this->trayAfterComing = settings.value("trayAfterComing", false).toBool();
@@ -148,7 +148,7 @@ bool LifetimeConfig::writeConfig()
 //    qDebug("+ Writing configuration");
     QSettings settings("chrm", "lifetime3");
 
-    settings.setValue("touch", QDateTime::currentDateTime().toTime_t());
+    settings.setValue("touch", QDateTime::currentDateTime().toSecsSinceEpoch());
     if(this->parentGui->pos().x() != -1) {
         settings.setValue("pos", this->parentGui->pos());
     }
@@ -173,11 +173,11 @@ bool LifetimeConfig::writeConfig()
 
     settings.setValue("usePause", this->usePause);
     if(this->parentGui->getTheCore()->startTime != NULL) {
-        settings.setValue("startTime", this->parentGui->getTheCore()->startTime->toTime_t());
+        settings.setValue("startTime", this->parentGui->getTheCore()->startTime->toSecsSinceEpoch());
     }
     settings.setValue("pauseSum", this->parentGui->getTheCore()->sumOfPauses);
     settings.setValue("inPause", this->inPause);
-    settings.setValue("pauseSince", this->pauseSince.toTime_t());
+    settings.setValue("pauseSince", this->pauseSince.toSecsSinceEpoch());
     settings.setValue("jobDescription", this->jobDescription);
     settings.setValue("useTheme", this->useTheme);
     settings.setValue("themeDir", this->themeDir);

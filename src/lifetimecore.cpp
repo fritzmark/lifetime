@@ -104,17 +104,17 @@ void LifetimeCore::update()
         this->parentGui->getTheConfig()->pauseSince = QDateTime::currentDateTime();
     }
 
-    long tmpCurrTime = QDateTime::currentDateTime().toTime_t();
+    long tmpCurrTime = QDateTime::currentDateTime().toSecsSinceEpoch();
     int day = this->startTime->date().dayOfWeek();
     double workForToday = this->parentGui->getTheConfig()->getWorkPerDay(day - 1);
 
-    this->plannedEndTime->setTime_t(this->startTime->toTime_t() + (long)(workForToday*3600) + this->sumOfPauses);
-    this->restDuration = this->plannedEndTime->toTime_t() - tmpCurrTime;
+    this->plannedEndTime->setSecsSinceEpoch(this->startTime->toSecsSinceEpoch() + (long)(workForToday*3600) + this->sumOfPauses);
+    this->restDuration = this->plannedEndTime->toSecsSinceEpoch() - tmpCurrTime;
     this->percentOfWork = 100 - (this->restDuration / ((workForToday*3600) + this->sumOfPauses))*100;
     if(this->percentOfWork > 100)
         this->percentOfWork = 100;
 
-    long tmpSecsOfWork = tmpCurrTime - this->startTime->toTime_t() - this->sumOfPauses;
+    long tmpSecsOfWork = tmpCurrTime - this->startTime->toSecsSinceEpoch() - this->sumOfPauses;
     double tmpSecsOfAutostop = LifetimeCore::timeToDecimal(this->parentGui->getTheConfig()->autoStopDuration, true)*3600;
 
     if((double)tmpSecsOfWork > tmpSecsOfAutostop)
@@ -157,7 +157,7 @@ void LifetimeCore::updateStartTime(int ts)
     if(this->startTime == NULL)
         return;
 
-    this->startTime->setTime_t(ts);
+    this->startTime->setSecsSinceEpoch(ts);
 }
 
 

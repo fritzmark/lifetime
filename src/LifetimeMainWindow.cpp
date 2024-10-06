@@ -72,7 +72,7 @@ LifetimeMainWindow::LifetimeMainWindow()
 
     if(this->theConfig->stateFromConfig > 0) {
         this->statusButtonClicked();
-        this->theCore->updateStartTime(this->theConfig->startTime.toTime_t());
+        this->theCore->updateStartTime(this->theConfig->startTime.toSecsSinceEpoch());
 
         if(this->theConfig->usePause) {
             this->theCore->sumOfPauses = this->theConfig->pauseFromConfig;
@@ -392,7 +392,7 @@ void LifetimeMainWindow::updateElements()
     switch (this->state) {
         case WORKING_IDLE:
             trayIcon->setIcon(QIcon(QString::fromUtf8(":/img/working_idle.png")));
-            pal.setColor(QPalette::Background, QColor(255,255,0));
+            pal.setColor(QPalette::Window, QColor(255,255,0));
             this->ui.pushButton_pause->setEnabled(false);
             this->pauseAct->setEnabled(false);
             this->ui.pushButton_pause->setChecked(false);
@@ -400,25 +400,25 @@ void LifetimeMainWindow::updateElements()
             break;
         case WORKING:
             trayIcon->setIcon(QIcon(QString::fromUtf8(":/img/working.png")));
-            pal.setColor(QPalette::Background, QColor(255,0,0));
+            pal.setColor(QPalette::Window, QColor(255,0,0));
             this->ui.pushButton_pause->setChecked(false);
             this->pauseAct->setChecked(false);
             break;
         case WORKING_PAUSE:
             trayIcon->setIcon(QIcon(QString::fromUtf8(":/img/working_pause.png")));
-            pal.setColor(QPalette::Background, QColor(0,0,255));
+            pal.setColor(QPalette::Window, QColor(0,0,255));
             this->ui.pushButton_pause->setChecked(true);
             this->pauseAct->setChecked(true);
             break;
         case WORKING_OVERTIME:
             trayIcon->setIcon(QIcon(QString::fromUtf8(":/img/working_overtime.png")));
-            pal.setColor(QPalette::Background, QColor(0,255,0));
+            pal.setColor(QPalette::Window, QColor(0,255,0));
             this->ui.pushButton_pause->setChecked(false);
             this->pauseAct->setChecked(false);
             break;
         default:
             trayIcon->setIcon(QIcon(QString::fromUtf8(":/img/working_idle.png")));
-            pal.setColor(QPalette::Background, QColor(100,100,100));
+            pal.setColor(QPalette::Window, QColor(100,100,100));
             this->ui.pushButton_pause->setChecked(false);
             this->pauseAct->setChecked(false);
     }

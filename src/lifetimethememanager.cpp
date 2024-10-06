@@ -28,7 +28,6 @@ LifetimeThemeManager::LifetimeThemeManager(LifetimeMainWindow* _parent, QString 
     this->pic_action_button = NULL;
     this->pic_pause_button = NULL;
     this->pic_info_button = NULL;
-    this->themeDir = NULL;
     this->setThemeDir(_dir);
 }
 
@@ -193,7 +192,7 @@ bool LifetimeThemeManager::redrawMainWindow()
         // Background
         QPixmap *back = this->getPixmap(LifetimeThemeManager::PIXMAP_BACKGROUND);
         QPalette palB(this->parent->palette());
-        palB.setBrush(QPalette::Background, *(back));
+        palB.setBrush(QPalette::Window, *(back));
         this->parent->setPalette(palB);
     } else {
         // Reset all crazy theme stuff at runtime
