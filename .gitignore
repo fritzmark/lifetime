@@ -1,3 +1,4 @@
-*.user
+*.user*
 *.autosave
 
+build
